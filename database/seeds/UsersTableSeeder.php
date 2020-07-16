@@ -15,8 +15,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Admin Admin',
             'role' => 'admin',
-            'email' => 'admin@argon.com',
-            'email_verified_at' => now(),
+            'email' => 'admin@mail.com',
             'password' => Hash::make('secret'),
             'created_at' => now(),
             'updated_at' => now()
@@ -25,8 +24,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'User User',
             'role' => 'user',
-            'email' => 'user@argon.com',
-            'email_verified_at' => now(),
+            'email' => 'user@mail.com',
             'password' => Hash::make('secret'),
             'created_at' => now(),
             'updated_at' => now()
