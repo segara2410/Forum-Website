@@ -7,8 +7,15 @@
         <div class="row">
                 <div class="col mb-5 mb-xl-0">
                     <div class="card shadow">
-                        <div class="card-header mb--3 bg-transparent">
-                            <h1 class="text-black">Forum</h1>
+                        <div class="card-header border-0">
+                            <div class="row align-items-center">
+                                <div class="col-8">
+                                    <h3 class="mb-0">Forum</h3>
+                                </div>
+                                <div class="col-4 text-right">
+                                    <a href="/post/create" class="btn btn-sm btn-primary">Write A Post</a>
+                                </div>
+                            </div>
                         </div>
                         @foreach($posts as $post)
                             <div class="card-body">
@@ -17,7 +24,7 @@
                                         <i class="ni ni-3x ni-circle-08"></i>
                                     </div>
                                     <div class="col">
-                                        <h1 class="text-black mb-0 d-inline">    <b>{{ $post->name }}</b></h1>
+                                        <h1 class="text-black mb-0 d-inline"><b>{{ $post->name }}</b></h1>
                                         <h6 class="text-uppercase text-gray ls-1 mb-1">{{ $post->created_at }}</h6>
                                     </div>
                                 </div>

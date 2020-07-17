@@ -56,7 +56,7 @@
                 </div>
             </div>
             <!-- Form -->
-            <form action="/user/search" method="GET" class="mt-4 mb-3 d-md-none">
+            <form action="/post/search" method="get" class="mt-4 mb-3 d-md-none">
                 <div class="input-group input-group-rounded input-group-merge">
                     <input type="search" name="search" class="form-control form-control-rounded form-control-prepended"
                         placeholder="{{ __('Search') }}" aria-label="Search">
@@ -75,7 +75,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="post">
+                    <a class="nav-link" href="/post">
                         <i class="ni fas fa-edit text-primary"></i> {{ __('My Posts') }}
                     </a>
                 </li>

@@ -17,14 +17,21 @@
                             </div>
                         </div>
                     </div>
-
+                    @if (session('status'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('status') }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
                     <div class="table-responsive">
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col">Title</th>
                                     <th scope="col">Creation Date</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="col"></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -32,10 +39,21 @@
                                     <tr>
                                         <td><b>{{ $post->title }}</b></td>
                                         <td>{{ $post->created_at }}</td>
-                                        <td>
-                                            <a href='post/show/{{ $post->id }}' class="btn btn-primary">View Post</a>
+                                        <td class="text-right">
+                                            <div class="dropleft">
+                                                <a class="btn btn-sm btn-icon-only text-light" href="#" role="button"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fas fa-ellipsis-v"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                                    <a class="dropdown-item" href="/post/show/{{ $post->id }}">View Post</a>
+                                                    <a class="dropdown-item" href="/post/edit/{{ $post->id }}">Edit Post</a>
+                                                    <a class="dropdown-item warning-confirm" href="/post/delete/{{ $post->id }}">Delete Post</a>
+                                                </div>
+                                            </div>
                                         </td>
                                     </tr>
+
                                 @endforeach
                             </tbody>
                         </table>

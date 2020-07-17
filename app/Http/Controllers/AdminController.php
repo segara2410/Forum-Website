@@ -28,12 +28,6 @@ class AdminController extends Controller
         return view('users.index', ['users' => $users]);
     }
 
-    public function search(Request $request)
-    {
-        $users = User::where('email', 'like', '%'.$request->search.'%')->orWhere('email', 'like', '%'.$request->search.'%')->paginate(10);
-        return view('users.search', ['search' => $request->search, 'users' => $users]);
-    }
-
     public function create()
     {
         return view('users.create');

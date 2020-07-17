@@ -26,7 +26,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'admin'], function () {
     Route::resource('user', 'AdminController', ['except' => ['show']]);
-    Route::get('user/search','AdminController@search');
     Route::get('user/create','AdminController@create');
     Route::post('user/store','AdminController@store');
     Route::get('user/edit/{id}','AdminController@edit');
@@ -40,6 +39,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('post/create','PostController@create');
     Route::post('post/store','PostController@store');
     Route::get('post/show/{id}','PostController@show');
+    Route::get('post/search','PostController@search');
+    Route::get('post/edit/{id}','PostController@edit');
     Route::post('post/update','PostController@update');
     Route::get('post/delete/{id}','PostController@delete');
     Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
