@@ -15,10 +15,7 @@
                 <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">
                     <div class="media align-items-center">
-                        <span class="avatar avatar-sm rounded-circle">
-                            <img alt="Image placeholder"
-                                src="{{ asset('argon') }}/img/theme/team-1-800x800.jpg">
-                        </span>
+                        <i class="ni ni-lg ni-circle-08"></i>
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
@@ -78,8 +75,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="post">
+                        <i class="ni fas fa-edit text-primary"></i> {{ __('My Posts') }}
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('profile.edit') }}">
-                        <i class="ni ni-single-02 text-primary"></i> {{ __('User profile') }}
+                        <i class="ni ni-single-02 text-primary"></i> {{ __('My profile') }}
                     </a>
                 </li>
                 @admin

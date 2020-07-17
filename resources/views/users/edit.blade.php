@@ -2,9 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
-
-    </div>
+    @include('layouts.headers.cards')
 
     <div class="container-fluid mt--7">
         <div class="row">

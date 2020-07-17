@@ -18,9 +18,6 @@
                         </div>
                     </div>
 
-                    <div class="col-12">
-                    </div>
-
                     <div class="table-responsive">
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">

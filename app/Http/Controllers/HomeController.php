@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
+
 class HomeController extends Controller
 {
     /**
@@ -21,6 +23,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $posts = Post::leftJoin('users', 'users.id', '=', 'author_id')
+            ->select('posts.id', 'posts.title', 'posts.body', 'posts.created_at', 'users.name')
+            ->orderByRaw('posts.created_at DESC')->paginate(10);
+
+        return view('home', compact('posts'));
     }
 }

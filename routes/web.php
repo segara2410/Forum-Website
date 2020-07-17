@@ -36,6 +36,12 @@ Route::group(['middleware' => 'admin'], function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
+    Route::resource('post', 'PostController', ['except' => ['show']]);
+    Route::get('post/create','PostController@create');
+    Route::post('post/store','PostController@store');
+    Route::get('post/show/{id}','PostController@show');
+    Route::post('post/update','PostController@update');
+    Route::get('post/delete/{id}','PostController@delete');
     Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
     Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
     Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);

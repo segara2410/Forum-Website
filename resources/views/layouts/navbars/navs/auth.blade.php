@@ -21,7 +21,7 @@
                 <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">
                     <div class="media align-items-center">
-                        <i class="ni ni-circle-08"></i>
+                        <i class="ni ni-lg ni-circle-08"></i>
                         <div class="media-body ml-2 d-none d-lg-block">
                             <span class="mb-0 text-sm  font-weight-bold">{{ auth()->user()->name }}</span>
                         </div>
