@@ -43,8 +43,16 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('post/edit/{id}','PostController@edit');
     Route::post('post/update','PostController@update');
     Route::get('post/delete/{id}','PostController@delete');
+
+    Route::resource('comment', 'CommentController', ['except' => ['show']]);
+    Route::get('comment/create/{post_id}','CommentController@create');
+    Route::post('comment/store','CommentController@store');
+    Route::get('comment/edit/{id}','CommentController@edit');
+    Route::post('comment/update','CommentController@update');
+    Route::get('comment/delete/{id}','CommentController@delete');
+
+
     Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
     Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
     Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });
-

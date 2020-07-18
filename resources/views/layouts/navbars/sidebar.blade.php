@@ -80,6 +80,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="/comment">
+                        <i class="ni far fa-comment text-primary"></i></i> {{ __('My Comments') }}
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('profile.edit') }}">
                         <i class="ni ni-single-02 text-primary"></i> {{ __('My profile') }}
                     </a>

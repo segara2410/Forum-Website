@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\User;
+use App\Comment;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -64,7 +65,8 @@ class PostController extends Controller
         $post = Post::where('posts.id', $id)->leftJoin('users', 'users.id', '=', 'author_id')
             ->select('posts.id', 'posts.author_id', 'posts.title', 'posts.body', 'posts.created_at', 'users.name')
             ->orderByRaw('posts.created_at DESC')->get();
-        return view('posts.show', compact('post'));
+        $comments = Post::find($id)->comments;
+        return view('posts.show', ['post' => $post, 'comments' => $comments]);
     }
 
     public function edit($id)

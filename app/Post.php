@@ -18,6 +18,10 @@ class Post extends Model
      *
      * @var array
      */
+    public function user()
+    {
+       return $this->belongsTo('App\user','author_id');
+    }
     public function comments()
     {
         return $this->hasMany(Comment::class);
