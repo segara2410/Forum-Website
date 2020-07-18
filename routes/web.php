@@ -20,9 +20,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'admin'], function () {
     Route::resource('user', 'AdminController', ['except' => ['show']]);
@@ -50,7 +47,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('comment/edit/{id}','CommentController@edit');
     Route::post('comment/update','CommentController@update');
     Route::get('comment/delete/{id}','CommentController@delete');
-
 
     Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
     Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);

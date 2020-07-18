@@ -16,50 +16,48 @@
                         </div>
                     </div>
                     <div class="card-body">
-                      <div class="row align-items-center">
-                          <div class="col-xs-1 pl-3 mt-0">
-                              <i class="ni ni-3x ni-circle-08"></i>
-                          </div>
-                          <div class="col">
-                              <h1 class="text-black mb-0 d-inline"><b>{{ $post->user->name }}</b></h1>
-                              <h6 class="text-uppercase text-gray ls-1 mb-1">{{ $post->created_at }}</h6>
-                          </div>
-                              @if ($post->author_id === Auth::user()->id)
-                                  <div class="dropleft">
-                                      <a class="btn btn-sm btn-icon-only text-light" href="#" role="button"
-                                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                          <i class="fas fa-ellipsis-v"></i>
-                                      </a>
-                                      <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                          <a class="dropdown-item" href="/post/edit/{{ $post->id }}">Edit Post</a>
-                                          <a class="dropdown-item warning-confirm" href="/post/delete/{{ $post->id }}">Delete Post</a>
-                                      </div>
-                                  </div>
-                              @endif
-                      </div>
-                      @if (session('status'))
-                          <div class="alert alert-success alert-dismissible fade show" role="alert">
-                              {{ session('status') }}
-                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                              </button>
-                          </div>
-                      @endif
-                      <h1 class="text-dark mb-0">{{ $post->title }}</h1>
-                      {{ $post->body }}
-                      <hr class="my-0">
+                        <div class="row align-items-center">
+                            <div class="col-xs-1 pl-3 mt-0">
+                                <i class="ni ni-3x ni-circle-08"></i>
+                            </div>
+                            <div class="col">
+                                <h1 class="text-black mb-0 d-inline"><b>{{ $post->user->name }}</b></h1>
+                                <h6 class="text-uppercase text-gray ls-1 mb-1">{{ $post->created_at }}</h6>
+                            </div>
+                            @if ($post->author_id === Auth::user()->id)
+                                <div class="dropleft">
+                                    <a class="btn btn-sm btn-icon-only text-light" href="#" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                        <a class="dropdown-item" href="/post/edit/{{ $post->id }}">Edit Post</a>
+                                        <a class="dropdown-item warning-confirm" href="/post/delete/{{ $post->id }}">Delete Post</a>
+                                    </div>
+                                </div>
+                            @endif
+                        </div>
+                        @if (session('status'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('status') }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        @endif
+                        <h1 class="text-dark mb-0">{{ $post->title }}</h1>
+                        {{ $post->body }}
                     </div>
-
+                    <hr class="my-0">
                     <div class="card-body">
-                      <div class="row align-items-center">
-                          <div class="col-xs-1 pl-3 mt-0">
-                              <i class="ni ni-3x ni-circle-08"></i>
-                          </div>
-                          <div class="col">
-                              <h1 class="text-black mb-0 d-inline"><b>{{ Auth::user()->name }}</b></h1>
-                          </div>
-                      </div>
-
+                        <div class="row align-items-center">
+                            <div class="col-xs-1 pl-3 mt-0">
+                                <i class="ni ni-2x ni-circle-08"></i>
+                            </div>
+                            <div class="col pl-2">
+                                <h2 class="text-black mb-0 d-inline"><b>{{ Auth::user()->name }}</b></h2>
+                            </div>
+                        </div>
 
                         <form role="form" method="POST" action="/comment/store">
                             @csrf
@@ -91,7 +89,7 @@
                                 <button type="submit" class="btn btn-primary mt-4">{{ __('Comment!') }}</button>
                             </div>
                         </form>
-                      </div>
+                    </div>
                 </div>
             </div>
         </div>

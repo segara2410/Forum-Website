@@ -16,29 +16,29 @@
                         </div>
                     </div>
                     <div class="card-body">
-                      <div class="row align-items-center">
-                          <div class="col-xs-1 pl-3 mt-0">
-                              <i class="ni ni-3x ni-circle-08"></i>
-                          </div>
-                          <div class="col">
-                              <h1 class="text-black mb-0 d-inline"><b>{{ $post->user->name }}</b></h1>
-                              <h6 class="text-uppercase text-gray ls-1 mb-1">{{ $post->created_at }}</h6>
-                          </div>
-                      </div>
-                      <h1 class="text-dark mb-0">{{ $post->title }}</h1>
-                      {{ $post->body }}
-                      <hr class="my-0">
+                        <div class="row align-items-center">
+                            <div class="col-xs-1 pl-3 mt-0">
+                                <i class="ni ni-3x ni-circle-08"></i>
+                            </div>
+                            <div class="col">
+                                <h1 class="text-black mb-0 d-inline"><b>{{ $post->user->name }}</b></h1>
+                                <h6 class="text-uppercase text-gray ls-1 mb-1">{{ $post->created_at }}</h6>
+                            </div>
+                        </div>
+                        <h1 class="text-dark mb-0">{{ $post->title }}</h1>
+                        {{ $post->body }}
                     </div>
+                    <hr class="my-0">
 
                     <div class="card-body">
-                      <div class="row align-items-center">
-                          <div class="col-xs-1 pl-3 mt-0">
-                              <i class="ni ni-3x ni-circle-08"></i>
-                          </div>
-                          <div class="col">
-                              <h1 class="text-black mb-0 d-inline"><b>{{ Auth::user()->name }}</b></h1>
-                          </div>
-                      </div>
+                        <div class="row align-items-center">
+                            <div class="col-xs-1 pl-3 mt-0">
+                                <i class="ni ni-2x ni-circle-08"></i>
+                            </div>
+                            <div class="col pl-2">
+                                <h2 class="text-black mb-0 d-inline"><b>{{ Auth::user()->name }}</b></h2>
+                            </div>
+                        </div>
                         <form method="post" action="/comment/update" autocomplete="off">
                             @csrf
 
