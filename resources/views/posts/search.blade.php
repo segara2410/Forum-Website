@@ -26,6 +26,7 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col">Title</th>
+                                    <th scope="col">Author</th>
                                     <th scope="col">Creation Date</th>
                                     <th scope="col">Action</th>
                                 </tr>
@@ -34,6 +35,7 @@
                                 @foreach($posts as $post)
                                     <tr>
                                         <td><b>{{ $post->title }}</b></td>
+                                        <td>{{ $post->user->name }}</td>
                                         <td>{{ $post->created_at }}</td>
                                         <td>
                                             <a href='/post/show/{{ $post->id }}' class="btn btn-primary">View Post</a>

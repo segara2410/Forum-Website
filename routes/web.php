@@ -42,7 +42,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('post/delete/{id}','PostController@delete');
 
     Route::resource('comment', 'CommentController', ['except' => ['show']]);
-    Route::get('comment/create/{post_id}','CommentController@create');
     Route::post('comment/store','CommentController@store');
     Route::get('comment/edit/{id}','CommentController@edit');
     Route::post('comment/update','CommentController@update');

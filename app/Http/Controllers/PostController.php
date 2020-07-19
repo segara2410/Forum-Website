@@ -65,7 +65,7 @@ class PostController extends Controller
         $post = Post::where('posts.id', $id)->leftJoin('users', 'users.id', '=', 'author_id')
             ->select('posts.id', 'posts.author_id', 'posts.title', 'posts.body', 'posts.created_at', 'users.name')
             ->orderByRaw('posts.created_at DESC')->get();
-        $comments = Post::find($id)->comments;
+        $comments = Post::find($id)->comments()->paginate(10);
         return view('posts.show', ['post' => $post, 'comments' => $comments]);
     }
 

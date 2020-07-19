@@ -16,7 +16,7 @@ class CommentController extends Controller
      */
     public function index()
     {
-      $comments = User::find(auth()->id())->comments()->paginate(10);
+      $comments = User::find(auth()->id())->comments()->orderByRaw('created_at DESC')->paginate(10);
 
       return view('comments.index', compact('comments'));
     }
@@ -26,10 +26,9 @@ class CommentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($post_id)
+    public function create()
     {
-      $post = Post::find($post_id);
-      return view('comments.create', compact('post'));
+      //
     }
 
     /**

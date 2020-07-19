@@ -10,7 +10,7 @@
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h3 class="mb-0">My Comments</h3>
+                                <h3 class="mb-0">My Comments ({{ $comments->count() }})</h3>
                             </div>
                             <div class="col-4 text-right">
                                 <a href="/post/create" class="btn btn-sm btn-primary">Write Post</a>
@@ -30,8 +30,9 @@
                             <thead class="thead-light"
                                 <tr>
                                     <th scope="col">Post Title</th>
+                                    <th scope="col">Post Author</th>
                                     <th scope="col">Comment</th>
-                                    <th scope="col">Creation Date</th>
+                                    <th scope="col">Comment Creation Date</th>
                                     <th scope="col"></th>
                                 </tr>
                             </thead>
@@ -39,6 +40,7 @@
                                 @foreach($comments as $comment)
                                     <tr>
                                         <td><b>{{ $comment->post->title }}</b></td>
+                                        <td>{{ $comment->post->user->name }}</td>
                                         <td>{{ $comment->description }}</td>
                                         <td>{{ $comment->created_at }}</td>
                                         <td class="text-right">

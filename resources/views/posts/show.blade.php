@@ -43,8 +43,51 @@
                         @endforeach
 
                         <hr class="my-3">
-                        <h2 class="mb-3">Comments :</h2>
 
+                        <!-- Form Comment -->
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-xs-1 pl-3 mt-0">
+                                    <i class="ni ni-2x ni-circle-08"></i>
+                                </div>
+                                <div class="col pl-2">
+                                    <h2 class="text-black mb-0 d-inline"><b>{{ Auth::user()->name }}</b></h2>
+                                </div>
+                            </div>
+
+                            <form role="form" method="POST" action="/comment/store">
+                                @csrf
+
+                                @if (session('status'))
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        {{ session('status') }}
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                @endif
+
+                                <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                                <input type="hidden" name="post_id" value="{{ $p->id }}">
+
+
+                                <div class="form-group{{ $errors->has('body') ? ' has-danger' : '' }}">
+                                    <div class="input-group input-group-alternative mb-3">
+                                        <textarea rows="3" cols="80" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="{{ __('Comment') }}" type="text" name="description" value="{{ old('description') }}" required></textarea>
+                                    </div>
+                                    @if ($errors->has('description'))
+                                        <span class="invalid-feedback" style="display: block;" role="alert">
+                                            <strong>{{ $errors->first('description') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary mt-4">{{ __('Add Comment') }}</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <h2 class="mb-3">Comments ({{ $p->comments->count()}}) :</h2>
                         <!-- Menampilkan comment pada pos yang telah di-show -->
 
                         @foreach($comments as $c)
@@ -63,8 +106,8 @@
                                                 <i class="fas fa-ellipsis-v"></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                <a class="dropdown-item" href="/comment/edit/{{ $c->id }}">Edit Post</a>
-                                                <a class="dropdown-item warning-confirm" href="/comment/delete/{{ $c->id }}">Delete Post</a>
+                                                <a class="dropdown-item" href="/comment/edit/{{ $c->id }}">Edit Comment</a>
+                                                <a class="dropdown-item warning-confirm" href="/comment/delete/{{ $c->id }}">Delete Comment</a>
                                             </div>
                                         </div>
                                     @endif
@@ -72,8 +115,10 @@
                             <div class="mb-4">{{ $c->description }}</div>
                         @endforeach
                     </div>
-                    <div class="text-center ">
-                        <a href="/comment/create/{{ $p->id }}" class="btn btn-primary mt-4">{{ __('Add A Comment') }}</a>
+                    <div class="card-footer py-4">
+                        <nav class="d-flex justify-content-end" aria-label="...">
+                            {{ $comments->links() }}
+                        </nav>
                     </div>
                 </div>
             </div>

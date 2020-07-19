@@ -48,8 +48,7 @@
                             <div class="form-group{{ $errors->has('body') ? ' has-danger' : '' }}">
                                 <div class="input-group input-group-alternative mb-3">
                                     <textarea rows="5" cols="80" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="{{ __('Comment') }}" type="text" name="description" value="{{ old('description') }}"
-                                      required>{{ old('description', $comment->description)}}
-                                    </textarea>
+                                      required>{{ old('description', $comment->description)}}</textarea>
                                 </div>
                                 @if ($errors->has('description'))
                                     <span class="invalid-feedback" style="display: block;" role="alert">
