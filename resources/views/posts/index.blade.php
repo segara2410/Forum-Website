@@ -13,7 +13,7 @@
                                 <h3 class="mb-0">My Posts ({{ $posts->count() }})</h3>
                             </div>
                             <div class="col-4 text-right">
-                                <a href="/post/create" class="btn btn-sm btn-primary">Write Post</a>
+                                <a href="/post/create" class="btn btn-sm btn-primary">Write A Post</a>
                             </div>
                         </div>
                     </div>
@@ -53,7 +53,6 @@
                                             </div>
                                         </td>
                                     </tr>
-
                                 @endforeach
                             </tbody>
                         </table>

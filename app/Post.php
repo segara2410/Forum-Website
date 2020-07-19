@@ -22,6 +22,7 @@ class Post extends Model
     {
        return $this->belongsTo('App\user','author_id');
     }
+
     public function comments()
     {
         return $this->hasMany(Comment::class);

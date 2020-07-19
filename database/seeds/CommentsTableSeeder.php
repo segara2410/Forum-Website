@@ -12,16 +12,16 @@ class CommentsTableSeeder extends Seeder
     public function run()
     {
         DB::table('comments')->insert([
-            'user_id' => '1',
+            'user_id' => '3',
             'post_id' => '1',
-            'description' => 'Test comment by Admin Admin',
+            'description' => 'Of course it is Python.',
             'created_at' => now(),
             'updated_at' => now()
         ]);
         DB::table('comments')->insert([
             'user_id' => '2',
             'post_id' => '1',
-            'description' => 'Test comment User',
+            'description' => 'C++ is the best programming language.',
             'created_at' => now(),
             'updated_at' => now()
         ]);

@@ -14,7 +14,7 @@
                             </small>
                             <br>
                             <small>
-                                {{ __('Username') }} <strong>admin@mail.com</strong>
+                                {{ __('Username') }} <strong>user@mail.com</strong>
                                 {{ __('Password') }} <strong>secret</strong>
                             </small>
                         </div>

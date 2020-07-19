@@ -29,7 +29,12 @@
                                     </div>
                                 </div>
                                 <a href="post/show/{{ $post->id }}"><h1 class="text-dark mb-0">{{ $post->title }}</h1></a>
-                                {{ $post->body }}
+                                <div>{{ $post->body }}</div>
+                                <a href="post/show/{{ $post->id }}">
+                                    <button type="button" class="mt-2 btn btn-sm btn-outline-primary btn-round">
+                                        <i class="far fa-comment-alt"></i><b>{{ $post->comments->count() }}</b>
+                                    </button>
+                                </a>
                             </div>
                             <hr class="my-0">
                         @endforeach
