@@ -39,17 +39,17 @@
                             <tbody>
                                 @foreach($comments as $comment)
                                     <tr>
-                                        <td><b>{{ $comment->post->title }}</b></td>
+                                        <td><a href="/post/show/{{ $comment->post->id }}"><b>{{ $comment->post->title }}</b></a></td>
                                         <td>{{ $comment->post->user->name }}</td>
                                         <td>{{ $comment->description }}</td>
                                         <td>{{ $comment->created_at }}</td>
                                         <td class="text-right">
                                             <div class="btn-group dropleft">
                                                 <a class="btn btn-sm btn-icon-only text-light" href="#" role="button"
-                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    data-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false">
                                                     <i class="fas fa-ellipsis-v"></i>
                                                 </a>
-                                                <div class="dropdown-menu dropdown-menu-right droSpdown-menu-arrow" style="z-index:1">
+                                                <div class="dropdown-menu dropdown-menu-right droSpdown-menu-arrow">
                                                     <a class="dropdown-item" href="/post/show/{{ $comment->post->id }}">View Comment</a>
                                                     <a class="dropdown-item" href="/comment/edit/{{ $comment->id }}">Edit Comment</a>
                                                     <a class="dropdown-item warning-confirm" href="/comment/delete/{{ $comment->id }}">Delete Comment</a>

@@ -10,7 +10,7 @@
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="mx-2">
-                                <a href="/user" class="btn btn-sm btn-default">Back</a>
+                                <a href="{{ url()->previous() }}" class="btn btn-sm btn-default">Back</a>
                             </div>
                             <div class="col-8">
                                 <h3 class="mb-0">Search Results for <b>'{{ $search }}'</b></h3>
