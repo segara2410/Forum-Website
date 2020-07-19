@@ -24,7 +24,7 @@ class AdminController extends Controller
      */
     public function index(User $model)
     {
-        $users = User::paginate(10);
+        $users = User::paginate(5);
         return view('users.index', ['users' => $users]);
     }
 

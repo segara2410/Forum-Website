@@ -16,7 +16,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::where('author_id', auth()->id())->orderByRaw('created_at DESC')->paginate(10);
+        $posts = Post::where('author_id', auth()->id())->orderByRaw('created_at DESC')->paginate(5);
 
         return view('posts.index', compact('posts'));
     }
@@ -51,7 +51,7 @@ class PostController extends Controller
 
     public function search(Request $request)
     {
-        $posts = Post::where('title', 'like', '%'.$request->search.'%')->orWhere('body', 'like', '%'.$request->search.'%')->paginate(10);
+        $posts = Post::where('title', 'like', '%'.$request->search.'%')->orWhere('body', 'like', '%'.$request->search.'%')->paginate(5);
         return view('posts.search', ['search' => $request->search, 'posts' => $posts]);
     }
 
@@ -65,7 +65,7 @@ class PostController extends Controller
         $post = Post::where('posts.id', $id)->leftJoin('users', 'users.id', '=', 'author_id')
             ->select('posts.id', 'posts.author_id', 'posts.title', 'posts.body', 'posts.created_at', 'users.name')
             ->orderByRaw('posts.created_at DESC')->get();
-        $comments = Post::find($id)->comments()->paginate(10);
+        $comments = Post::find($id)->comments()->paginate(5);
         return view('posts.show', ['post' => $post, 'comments' => $comments]);
     }
 

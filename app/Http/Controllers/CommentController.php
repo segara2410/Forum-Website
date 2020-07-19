@@ -16,7 +16,7 @@ class CommentController extends Controller
      */
     public function index()
     {
-      $comments = User::find(auth()->id())->comments()->orderByRaw('created_at DESC')->paginate(10);
+      $comments = User::find(auth()->id())->comments()->orderByRaw('created_at DESC')->paginate(5);
 
       return view('comments.index', compact('comments'));
     }

@@ -25,7 +25,7 @@ class HomeController extends Controller
     {
         $posts = Post::leftJoin('users', 'users.id', '=', 'author_id')
             ->select('posts.id', 'posts.title', 'posts.body', 'posts.created_at', 'users.name')
-            ->orderByRaw('posts.created_at DESC')->paginate(10);
+            ->orderByRaw('posts.created_at DESC')->paginate(5);
 
         return view('home', compact('posts'));
     }
