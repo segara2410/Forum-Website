@@ -7,6 +7,9 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-3 col-md-6">
                         <h1 class="text-white">{{ __('Selamat Datang di Forum Website Q&A') }}</h1>
+                        <h3 class="text-white">Segara Bhagas Dagsapurwa</h3>
+                        <h3 class="text-white">Ega Prabu Pamungkas</h3>
+                        <h3 class="text-white">Muhammad Naufaldillah</h3>
                     </div>
                 </div>
             </div>
