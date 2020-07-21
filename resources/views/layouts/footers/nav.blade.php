@@ -5,10 +5,8 @@
             <a href="https://www.updivision.com" class="font-weight-bold ml-1" target="_blank">Updivision</a>
         </div>
         <div class="copyright text-center text-xl-left text-muted">
-            <p class="font-weight-bold ml-1" target="_blank">Created By:</p>
-            <p class="font-weight-bold ml-1" target="_blank">Segara Bhagas Dagsapurwa</p>
-            <p class="font-weight-bold ml-1" target="_blank">Ega Prabu Pamungkas</p>
-            <p class="font-weight-bold ml-1" target="_blank">Muhammad Naufaldillah</p>
+            <small class="font-weight-bold ml-1" target="_blank">Created By:</small>
+            <small class="font-weight-bold ml-1" target="_blank">Segara Bhagas Dagsapurwa, Ega Prabu Pamungkas, Muhammad Naufaldillah</small>
         </div>
     </div>
     <div class="col-xl-6">
