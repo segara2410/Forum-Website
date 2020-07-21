@@ -87,7 +87,7 @@
                             </form>
                         </div>
 
-                        <h2 class="mb-3">Comments ({{ $p->comments->count()}}) :</h2>
+                        <h2 class="mb-3">Comments ({{ $comments->total() }}) :</h2>
                         <!-- Menampilkan comment pada pos yang telah di-show -->
 
                         @foreach($comments as $c)
